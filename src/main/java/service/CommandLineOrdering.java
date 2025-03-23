@@ -1,6 +1,7 @@
 package service;
 
 import model.ProductType;
+import model.Receipt;
 
 import java.util.List;
 import java.util.Scanner;
@@ -56,7 +57,7 @@ public class CommandLineOrdering {
 
     public static void printCoffeeShopMenu() {
         System.out.println(SEPARATION_LINE_EQUALS_SIGN_MENU);
-        System.out.println("| Please select a product from our delicious menu: |");
+        System.out.println("| Please select product from our delicious menu: |");
         System.out.println(SEPARATION_LINE_EQUALS_SIGN_MENU);
         System.out.println("\nType ONLY menu item numbers!");
         System.out.println(SEPARATION_LINE_EQUALS_SIGN_MENU);
@@ -97,5 +98,24 @@ public class CommandLineOrdering {
         System.out.println("1 - Payment by cash.");
         System.out.println("2 - Payment by credit card.");
         System.out.print("Payment method selected: ");
+    }
+
+    public static void printStartingMenu() {
+        System.out.println("\nPlease select an option:");
+        System.out.println("1 - Order default client's order");
+        System.out.println("2 - Create a custom order from the menu");
+        System.out.print("\nChoose an option: ");
+    }
+
+    public static void processDefaultOrder(List<ProductType> order, CoffeeShopService service) {
+        System.out.println("\nLoading default shopper's order...");
+        order.add(ProductType.LARGE_COFFEE);
+        order.add(ProductType.EXTRA_MILK);
+        order.add(ProductType.SMALL_COFFEE);
+        order.add(ProductType.SPECIAL_ROAST_COFFEE);
+        order.add(ProductType.BACON_ROLL);
+        order.add(ProductType.FRESH_ORANGE_JUICE);
+        Receipt receipt = service.processOrder(order, PAYMENT_CARD);
+        receipt.print();
     }
 }

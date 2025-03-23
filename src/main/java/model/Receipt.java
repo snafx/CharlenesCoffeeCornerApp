@@ -9,14 +9,15 @@ public record Receipt(List<ReceiptItem> items, double total, String paymentMetho
 
     private static final Logger logger = Logger.getLogger(Receipt.class.getName());
 
-    private String getRandomReceiptUniqueNumber() {
+    private String getUniqueReceiptNumber() {
         return Integer.toHexString((int) System.currentTimeMillis()).toUpperCase();
     }
 
     public void print() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append(LINE_BREAK).append(LINE_BREAK)
+        sb
+                .append(LINE_BREAK).append(LINE_BREAK)
                 .append(SEPARATION_LINE_EQUALS_SIGN_RECEIPT).append(LINE_BREAK)
                 .append("|               Charlene's Coffee Corner               |").append(LINE_BREAK)
                 .append("|                    Swiss Re Office                   |").append(LINE_BREAK)
@@ -33,7 +34,7 @@ public record Receipt(List<ReceiptItem> items, double total, String paymentMetho
                 .append("|               *** Client's receipt ***               |").append(LINE_BREAK)
                 .append(String.format("%-44s %s %n", "| Time:", ORDER_TIME + "  |"))
                 .append(String.format("%-42s %s %n", "| Date:", ORDER_DATE + "  |"))
-                .append(String.format("%-44s %s %n", "| Receipt #:", getRandomReceiptUniqueNumber() + "  |"))
+                .append(String.format("%-44s %s %n", "| Receipt #:", getUniqueReceiptNumber() + "  |"))
                 .append(EMPTY_LINE_WITH_PIPES).append(LINE_BREAK)
                 .append("|                   *** Payment ***                    |").append(LINE_BREAK);
 

@@ -5,9 +5,6 @@ import java.time.format.DateTimeFormatter;
 
 public class Constants {
 
-    private Constants() {
-    }
-
     public static final String LINE_BREAK = "\n";
     public static final String MENU_FORMATTING_PATTERN = "%-48s %s %n";
     public static final String SEPARATION_LINE_EQUALS_SIGN_MENU = "==================================================";
@@ -20,4 +17,6 @@ public class Constants {
 
     public static final String PAYMENT_CASH = "Paid in full with cash";
     public static final String PAYMENT_CARD = "Paid with credit card";
+
+    private Constants() {}
 }

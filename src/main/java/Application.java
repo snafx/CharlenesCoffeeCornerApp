@@ -23,6 +23,25 @@ public class Application {
         System.out.println();
 
         while (true) {
+            printStartingMenu();
+
+            try {
+                int startChoice = Integer.parseInt(scanner.nextLine());
+
+                if (startChoice == 1) {
+                    processDefaultOrder(order, service);
+                    return;
+                } else if (startChoice == 2) {
+                    break;
+                } else {
+                    System.out.println("Invalid option. Please select 1 or 2.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid number (1 or 2)!");
+            }
+        }
+
+        while (true) {
             printCoffeeShopMenu();
 
             try {
@@ -44,6 +63,5 @@ public class Application {
             }
         }
     }
-
 
 }
