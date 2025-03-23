@@ -2,9 +2,9 @@
 
 ### This is a simple application to track client orders in the coffee shop.
 #
-Sample output from the order looks like this:
+The sample output from the order looks like this:
 
-![receipt_2.png](src/test/resources/docs/receipt_2.png)
+![receipt.png](src/test/resources/docs/receipt.png)
 
 
 ### How to test the application:

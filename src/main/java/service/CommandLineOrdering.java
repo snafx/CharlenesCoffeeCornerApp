@@ -56,7 +56,7 @@ public class CommandLineOrdering {
 
     public static void printCoffeeShopMenu() {
         System.out.println(SEPARATION_LINE_EQUALS_SIGN_MENU);
-        System.out.println("| Please select product from out delicious menu: |");
+        System.out.println("| Please select a product from our delicious menu: |");
         System.out.println(SEPARATION_LINE_EQUALS_SIGN_MENU);
         System.out.println("\nType ONLY menu item numbers!");
         System.out.println(SEPARATION_LINE_EQUALS_SIGN_MENU);

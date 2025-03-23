@@ -19,6 +19,23 @@ class CoffeeShopServiceTest {
 
     private final CoffeeShopService service = new CoffeeShopService();
 
+    @Test
+    void testShoppersList() {
+        List<ProductType> order = Arrays.asList(
+                ProductType.LARGE_COFFEE,
+                ProductType.EXTRA_MILK, //free cheapest extra
+                ProductType.SMALL_COFFEE,
+                ProductType.SPECIAL_ROAST_COFFEE,
+                ProductType.BACON_ROLL,
+                ProductType.FRESH_ORANGE_JUICE
+        );
+        Receipt receipt = service.processOrder(order, PAYMENT_CASH);
+        assertEquals(6, receipt.items().size());
+        assertTrue(receipt.items().stream().anyMatch(item -> item.name().equals("Extra Milk") && item.isFree()));
+        assertEquals(15.35, receipt.total(), 0.01);
+        receipt.print();
+    }
+
     @ParameterizedTest
     @CsvSource({
             "SMALL_COFFEE, 2.50",
