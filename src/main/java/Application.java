@@ -10,6 +10,12 @@ import static service.CommandLineOrdering.*;
 
 public class Application {
 
+    /**
+     * Main method to start the application. When started user will see two possible choices:
+     * 1 - Order default client's order - this option loads default list of products specified in the task description.
+     * 2 - Create a custom order from the menu - user will be able to create a custom order.
+     * Final output - user will see the summary of the order in simple graphic way simulating the supermarket receipt.
+     */
     public static void main(String[] args) {
 
         CoffeeShopService service = new CoffeeShopService();
