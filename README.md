@@ -21,3 +21,6 @@ Sample output from the order looks like this:
 ![4.png](src/test/resources/docs/4.png)
 #
 ![receipt_1.png](src/test/resources/docs/receipt_1.png)
+#
+#
+Have fun!
