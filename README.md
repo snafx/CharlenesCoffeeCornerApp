@@ -16,7 +16,7 @@ Sample output from the order looks like this:
 #
 ![3.png](src/test/resources/docs/3.png)
 #
-  - Run tests cases and check the printed output
+  - Run test cases and check the printed output, i.e.:
 
 ![4.png](src/test/resources/docs/4.png)
 #
